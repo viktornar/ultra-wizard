@@ -11,11 +11,11 @@ export const wizardConfig = {
       "step": 2,
       "depends": [],
       "answers": [
-        1,
-        2,
-        3,
-        4,
-        5,
+        "1 year",
+        "2 years",
+        "3 years",
+        "4 years",
+        "5 years",
       ],
     },
     {
