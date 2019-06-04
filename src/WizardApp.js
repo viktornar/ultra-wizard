@@ -3,7 +3,12 @@ import './WizardApp.scss';
 
 function WizardApp() {
   return (
-    <div className="WizardApp">Intro page</div>
+    <div className="WizardApp">
+      <div className="WizardApp__button--back">Back</div>
+      <div className="WizardApp__body">
+        Intro step
+      </div>
+    </div>
   );
 }
 

@@ -8,4 +8,67 @@
   position: relative;
   overflow: hidden;
   height: 660px;
+
+  &__button--back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: left;
+    font-family: $montserrat;
+    display: inline-block;
+    font-weight: 700;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 13px;
+    line-height: 1.1;
+    text-decoration: none;
+    cursor: pointer;
+    color: $grey-dark;
+    border: none;
+    white-space: nowrap;
+    background: none;
+    padding: 2px;
+
+    &:hover {
+      &::before {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+      }
+    }
+
+    &::before {
+      content: "";
+      height: 16px;
+      width: 16px;
+      display: inline-block;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIyLjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICB3aWR0aD0iMjJweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjIgMjIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIyIDIyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CiAgPGc+CiAgICA8Zz4KICAgICAgICA8cG9seWxpbmUgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I2E2YTZhNjtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7IiBwb2ludHM9IgogICAgICAgIDEwLjMsNyA2LjMsMTEgMTAuMywxNSAgICAgIi8+CiAgICAgICAgPGxpbmUgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I2E2YTZhNjtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7IiB4MT0iNy4zIiB5MT0iMTEiIHgyPSIxNS4zIiB5Mj0iMTEiLz4KICAgIDwvZz4KICAgICAgPGNpcmNsZSBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojYTZhNmE2O3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDsiIGN4PSIxMSIgY3k9IjExIiByPSIxMCIvPgogIDwvZz4KPC9zdmc+Cg==");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+      vertical-align: sub;
+      margin-right: 8px;
+    }
+
+    &::before {
+      transition: transform .2s ease-in-out;
+    }
+  }
+
+  &__body {
+    text-align: center;
+  }
+
+  .transition {
+    transition: opacity 900ms ease-in-out;
+    opacity: 0;
+
+    &.entered {
+      opacity: 1;
+    }
+
+    &.exiting {
+      opacity: 0;
+    }
+  }
 }
