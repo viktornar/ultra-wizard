@@ -7,6 +7,8 @@ import {STATE_INITIAL, STATE_STARTED} from "./core/constants";
 import './WizardApp.scss';
 import Intro from "./wizzard/Intro";
 import {historyGoBack, historyRecord} from "./core/history";
+import Question from "./wizzard/Question";
+import Summary from "./wizzard/Summary";
 
 class WizardApp extends React.Component {
   static propTypes = {
@@ -60,7 +62,7 @@ class WizardApp extends React.Component {
     return (
       <div className="WizardApp">
         {
-          this.state.step > 1 &&
+          this.state.step > 1 && this.state.step < this.state.count &&
           <div
             className="WizardApp__button--back"
             onClick={this.goBack}>
@@ -74,10 +76,11 @@ class WizardApp extends React.Component {
           }
           {
             0 < this.state.step && this.state.step < this.state.count &&
-            <div>
-              <h1>Question {this.state.step}</h1>
-              <button onClick={this.recordAnswerAndStep}>Next</button>
-            </div>
+            <Question onNext={this.recordAnswerAndStep} />
+          }
+          {
+            this.state.step === this.state.count &&
+            <Summary/>
           }
         </div>
         <StatusBar step={this.state.step} count={this.state.count}/>
