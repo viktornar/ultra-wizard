@@ -41,7 +41,10 @@ class WizardApp extends React.Component {
 
   goBack = () => historyGoBack(this);
 
-  recordAnswerAndStep = () => {
+  recordAnswerAndStep = (answer) => {
+    const {givenAnswers} = this.state;
+    givenAnswers.push(answer);
+
     let step = 0;
     let nextStep = this.state.step + 1;
 
@@ -52,10 +55,14 @@ class WizardApp extends React.Component {
     }
 
     historyRecord(this, {
-      step
+      step,
+      givenAnswers
     });
 
-    this.setState({step});
+    this.setState({
+      step,
+      givenAnswers
+    });
   };
 
   render() {
@@ -79,7 +86,7 @@ class WizardApp extends React.Component {
           }
           {
             0 < this.state.step && this.state.step < this.state.count &&
-            <Question onNext={this.recordAnswerAndStep} question={currentQuestion} />
+            <Question onNext={this.recordAnswerAndStep} question={currentQuestion}/>
           }
           {
             this.state.step === this.state.count &&
