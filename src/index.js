@@ -26,5 +26,5 @@ const wizardConfig = {
 
 ReactDOM.render(
   <WizardApp wizardConfig={wizardConfig}/>,
-  document.getElementById('root')
+  document.getElementById('wizard')
 );
