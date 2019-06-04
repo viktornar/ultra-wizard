@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
+import WizardApp from './WizardApp';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <WizardApp/>,
+  document.getElementById('root')
+);

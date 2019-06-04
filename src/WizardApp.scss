@@ -1,0 +1,11 @@
+@import "core/variables";
+
+.WizardApp {
+  font-family: $montserrat;
+  padding: 100px 40px 0;
+  border: solid 3px $grey-dark;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  height: 660px;
+}
