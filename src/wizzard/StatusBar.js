@@ -4,21 +4,21 @@ import PropTypes from 'prop-types';
 import './StatusBar.scss';
 
 function StatusBar(props) {
-  const steps = [];
+  const stepsClassNames = [];
   for (let i = 0; i < props.count; ++i) {
-    steps[i] = "";
+    stepsClassNames[i] = "";
   }
   for (let i = 0; i < props.step - 1; ++i) {
-    steps[i] += 'seen ';
+    stepsClassNames[i] += 'seen ';
   }
-  steps[props.step - 1] += 'active ';
-  steps[props.count - 1] += 'final ';
+  stepsClassNames[props.step - 1] += 'active ';
+  stepsClassNames[props.count - 1] += 'final ';
 
   return (
     <ul className="StatusBar">
       {
-        steps.map(function (classes, i) {
-          return (<li key={i} className={classes}><i/></li>);
+        stepsClassNames.map(function (className, i) {
+          return (<li key={i} className={className}><i/></li>);
         })
       }
     </ul>
