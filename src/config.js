@@ -1,13 +1,16 @@
 export const wizardConfig = {
   questions: [
     {
-      "text": "What size of loan you want to get?",
+      "text": "What the size of loan you want to get?",
       "step": 1,
       "depends": [],
-      "answers": [],
+      "answer": {
+        "min": 10000,
+        "max": 30000,
+      },
     },
     {
-      "text": "Choose term of loan?",
+      "text": "Choose the term of loan?",
       "step": 2,
       "depends": [],
       "answers": [
@@ -28,11 +31,11 @@ export const wizardConfig = {
         'Every half year',
       ],
     },
-    {
-      "text": "Interest rate?",
-      "step": 4,
-      "depends": [],
-      "answers": [],
-    }
+    // {
+    //   "text": "Interest rate?",
+    //   "step": 4,
+    //   "depends": [],
+    //   "answers": [],
+    // }
   ]
 };

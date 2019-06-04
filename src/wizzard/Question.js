@@ -5,35 +5,36 @@ import './Question.scss';
 import {LoanAmount} from "./LoanAmount";
 
 function Question(props) {
-  const {text, answers} = props.question;
-  const handleClick = (answer) => (e) => {
+  const {text, answers, answer} = props.question;
+  const handleClick = (answer) => () => {
     props.onNext(answer)
   };
-
-  const currentHistory = [...props.history].pop();
-  const {step} = currentHistory;
 
   return (
     <div className="Question">
       <h2>{text}</h2>
       {
-        step === 1 &&
-        <LoanAmount onNext={props.onNext}/>
+        answer && answer.min && answer.max &&
+        <LoanAmount
+          onNext={props.onNext}
+          min={answer.min}
+          max={answer.max}
+        />
       }
       {
-        step > 1 && answers.map((answer, id) => {
+        answers && answers.map((answer, id) => {
           return (
-            <div key={id}>{answer}</div>
+            <div key={id}>
+              <button
+                className="Question__answer"
+                onClick={handleClick(answer)}
+              >
+                {answer}
+              </button>
+            </div>
           )
         })
       }
-
-      <button
-        className="Question__next-step"
-        onClick={handleClick('')}
-      >
-        Next
-      </button>
     </div>
   );
 }

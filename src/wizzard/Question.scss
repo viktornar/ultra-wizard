@@ -1,8 +1,7 @@
 @import "../core/ui";
 
 .Question {
-  &__next-step {
+  &__answer {
     @extend %button;
-    @extend %next;
   }
 }
