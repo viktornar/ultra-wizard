@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Question.scss';
-import {LoanAmount} from "./LoanAmount";
+import {NumberInput} from "./NumberInput";
 
 function Question(props) {
   const {text, answers, answer} = props.question;
@@ -15,7 +15,7 @@ function Question(props) {
       <h2>{text}</h2>
       {
         answer && answer.min && answer.max &&
-        <LoanAmount
+        <NumberInput
           onNext={props.onNext}
           min={answer.min}
           max={answer.max}

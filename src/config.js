@@ -31,11 +31,14 @@ export const wizardConfig = {
         'Every half year',
       ],
     },
-    // {
-    //   "text": "Interest rate?",
-    //   "step": 4,
-    //   "depends": [],
-    //   "answers": [],
-    // }
+    {
+      "text": "Interest rate?",
+      "step": 4,
+      "depends": [],
+      "answer": {
+        "min": 1,
+        "max": 5,
+      },
+    }
   ]
 };

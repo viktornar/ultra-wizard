@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import './LoanAmount.scss';
+import './NumberInput.scss';
 
-export class LoanAmount extends Component {
+export class NumberInput extends Component {
   static propTypes = {
     onNext: PropTypes.func.isRequired,
     min: PropTypes.number.isRequired,
