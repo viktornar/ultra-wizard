@@ -1,4 +1,7 @@
 import React from 'react';
+
+import StatusBar from './wizzard/StatusBar';
+
 import './WizardApp.scss';
 
 function WizardApp() {
@@ -8,6 +11,7 @@ function WizardApp() {
       <div className="WizardApp__body">
         Intro step
       </div>
+      <StatusBar step={1} count={5}/>
     </div>
   );
 }

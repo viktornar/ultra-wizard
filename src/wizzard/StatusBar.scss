@@ -1,0 +1,102 @@
+@import "../core/variables";
+
+.StatusBar {
+  padding: 40px 40px 10px 0;
+  margin: 0;
+  border-top: solid 1px $grey-dark;
+  text-align: center;
+  list-style-type: none;
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  right: 40px;
+
+  @media screen and (max-width: 890px) {
+    left: 20px;
+    right: 20px;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0;
+    width: 12.5%;
+    min-width: 30px;
+    height: 30px;
+    text-align: center;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 4px;
+      position: absolute;
+      top: calc(50% - 2px);
+      left: 0;
+      background-color: $grey-light;
+      z-index: -1;
+      transition: background-color .4s;
+    }
+
+    i {
+      width: 30px;
+      height: 30px;
+      background-image: url("../images/dot--grey.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      display: inline-block;
+      transition: background .4s;
+    }
+
+    &::after {
+      left: inherit;
+      right: 0;
+    }
+
+    &.seen {
+      i {
+        background-image: url("../images/dot--red.svg");
+      }
+
+      &::after,
+      &::before {
+        background-color: $red;
+      }
+    }
+
+    &.active {
+      i {
+        background-image: url("../images/dot--red.svg");
+      }
+
+      &::before {
+        background-color: $red;
+      }
+    }
+
+    &.final {
+      i {
+        background-image: url("../images/money-bag--grey.svg");
+      }
+    }
+
+    &.final.active {
+      i {
+        background-image: url("../images/money-bag--red.svg");
+      }
+    }
+
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
