@@ -3,22 +3,36 @@ export const wizardConfig = {
     {
       "text": "What size of loan you want to get?",
       "step": 1,
-      "depends": []
+      "depends": [],
+      "answers": [],
     },
     {
-      "text": "Term of loan?",
+      "text": "Choose term of loan?",
       "step": 2,
-      "depends": []
+      "depends": [],
+      "answers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+      ],
     },
     {
-      "text": "Payment frequency?",
+      "text": "Payment frequency per year?",
       "step": 3,
-      "depends": []
+      "depends": [],
+      "answers": [
+        'Every month',
+        'Every quarter',
+        'Every half year',
+      ],
     },
     {
       "text": "Interest rate?",
       "step": 4,
-      "depends": []
+      "depends": [],
+      "answers": [],
     }
   ]
 };
