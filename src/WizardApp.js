@@ -59,6 +59,9 @@ class WizardApp extends React.Component {
   };
 
   render() {
+    const {questions} = this.props.wizardConfig;
+    const currentQuestion = questions[this.state.step - 1];
+
     return (
       <div className="WizardApp">
         {
@@ -76,7 +79,7 @@ class WizardApp extends React.Component {
           }
           {
             0 < this.state.step && this.state.step < this.state.count &&
-            <Question onNext={this.recordAnswerAndStep} />
+            <Question onNext={this.recordAnswerAndStep} question={currentQuestion} />
           }
           {
             this.state.step === this.state.count &&
