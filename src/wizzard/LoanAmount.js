@@ -20,7 +20,7 @@ export class LoanAmount extends Component {
     });
   };
 
-  onClick = (event) => {
+  onClick = () => {
     const {amount} = this.state;
     if (amount < 1000 || amount > 30000) {
       this.setState({showMessage: true});
