@@ -41,7 +41,6 @@ class WizardApp extends React.Component {
 
   recordAnswerAndStep = () => {
     let step = 0;
-    debugger;
     let nextStep = this.state.step + 1;
 
     if (nextStep >= this.state.count) {
