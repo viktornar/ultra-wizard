@@ -1,0 +1,32 @@
+@import "variables";
+
+%button {
+  transition: background-color 100ms ease-in-out;
+  border-radius: 100px;
+  display: inline-block;
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 36px;
+  font-weight: 700;
+  text-decoration: none;
+  min-width: 200px;
+  text-align: center;
+  margin: 20px 10px 0;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid $black;
+  color: $black;
+  background-color: transparent;
+  font-family: $montserrat;
+
+  @media screen and (max-width: 700px) {
+    padding: 0 9px;
+    margin: 10px 0 0;
+  }
+
+  &:hover,
+  &.active {
+    background-color: rgba($black, 0.1);
+  }
+}

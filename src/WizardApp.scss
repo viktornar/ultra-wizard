@@ -71,4 +71,29 @@
       opacity: 0;
     }
   }
+
+  h2 {
+    font-size: $font-xxl;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  p {
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: $font-l;
+    line-height: 1.8;
+
+    @media screen and (max-width: 890px) {
+      font-size: $font-m;
+      line-height: 1.4;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
