@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import './Question.scss';
 import {NumberInput} from "./NumberInput";
 
+function getAnswer(answer) {
+  if ()
+}
+
 function Question(props) {
   const {text, answers, answer} = props.question;
   const handleClick = (answer) => () => {
@@ -23,6 +27,8 @@ function Question(props) {
       }
       {
         answers && answers.map((answer, id) => {
+          const answerWithCondition = getAnswer();
+
           return (
             <div key={id}>
               <button
