@@ -30,3 +30,26 @@
     background-color: rgba($black, 0.1);
   }
 }
+
+%next {
+  background-color: $red;
+  border-color: $red;
+  color: $white;
+  min-width: 100px;
+
+  &:hover {
+    background-color: lighten($red, 10%);
+  }
+}
+
+%disabled {
+  background-color: $disabled-background-color;
+  border-color: $disabled-background-color;
+  color: $disabled-color;
+  min-width: 100px;
+
+  &:hover {
+    background-color: $disabled-background-color;
+    cursor: default;
+  }
+}

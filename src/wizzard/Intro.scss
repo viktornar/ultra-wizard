@@ -4,15 +4,8 @@
 .Intro {
   padding: 0 0 60px;
 
-  &__button {
+  &__start {
     @extend %button;
-    background-color: $red;
-    border-color: $red;
-    color: $white;
-    min-width: 100px;
-
-    &:hover {
-      background-color: lighten($red, 10%);
-    }
+    @extend %next;
   }
 }

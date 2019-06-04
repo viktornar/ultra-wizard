@@ -86,11 +86,15 @@ class WizardApp extends React.Component {
           }
           {
             0 < this.state.step && this.state.step < this.state.count &&
-            <Question onNext={this.recordAnswerAndStep} question={currentQuestion}/>
+            <Question
+              onNext={this.recordAnswerAndStep}
+              question={currentQuestion}
+              history={this.state.history}
+            />
           }
           {
             this.state.step === this.state.count &&
-            <Summary/>
+            <Summary givenAnswers={this.state.givenAnswers}/>
           }
         </div>
         <StatusBar step={this.state.step} count={this.state.count}/>

@@ -1,0 +1,38 @@
+@import "../core/variables";
+@import "../core/ui";
+
+.LoanAmount {
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input {
+    font-size: 2em;
+    width: 6em;
+    border-radius: 100px;
+    border: 1px solid grey;
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &__next {
+    @extend %button;
+    @extend %next;
+  }
+
+  &__next--disabled {
+    @extend %button;
+    @extend %disabled;
+  }
+
+  &__message {
+    margin: 20px 20px;
+    color:  $red;
+  }
+}

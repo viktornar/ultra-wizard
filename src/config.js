@@ -1,7 +1,7 @@
 export const wizardConfig = {
   questions: [
     {
-      "text": "Loan amount?",
+      "text": "What size of loan you want to get?",
       "step": 1,
       "depends": []
     },
