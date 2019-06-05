@@ -2,10 +2,12 @@ export const wizardConfig = {
   questions: [
     {
       "text": "What the size of loan you want to get?",
+      "tip": "Depending on entered value next step will differ :)",
       "step": 1,
       "answer": {
         "min": 1000,
         "max": 30000,
+        "prefix": "eur",
       },
     },
     {
@@ -44,6 +46,7 @@ export const wizardConfig = {
       "answer": {
         "min": 1,
         "max": 5,
+        "prefix": "%",
       },
     }
   ]

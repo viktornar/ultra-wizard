@@ -8,6 +8,11 @@ export class NumberInput extends Component {
     onNext: PropTypes.func.isRequired,
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,
+    prefix: PropTypes.string,
+  };
+
+  static defaultProps = {
+    prefix: '',
   };
 
   constructor(props) {
@@ -24,14 +29,14 @@ export class NumberInput extends Component {
 
   onClick = () => {
     const {amount} = this.state;
-    const {min, max} = this.props;
+    const {min, max, prefix} = this.props;
 
     if (amount < min || amount > max) {
       this.setState({showMessage: true});
       return;
     }
 
-    this.props.onNext(amount);
+    this.props.onNext(`${amount} ${prefix}`);
   };
 
   render() {

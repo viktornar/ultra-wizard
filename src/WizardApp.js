@@ -71,35 +71,37 @@ class WizardApp extends React.Component {
     const currentQuestion = questions[this.state.step - 1];
 
     return (
-      <div className="WizardApp">
-        {
-          this.state.step > 1 && this.state.step < this.state.count &&
-          <div
-            className="WizardApp__button--back"
-            onClick={this.goBack}>
-            Back
+      <FadeTransition>
+        <div className="WizardApp">
+          {
+            this.state.step > 1 && this.state.step < this.state.count &&
+            <div
+              className="WizardApp__button--back"
+              onClick={this.goBack}>
+              Back
+            </div>
+          }
+          <div className="WizardApp__body">
+            {
+              this.state.step === 0 &&
+              <Intro onStart={this.startWizard}/>
+            }
+            {
+              0 < this.state.step && this.state.step < this.state.count &&
+              <Question
+                onNext={this.recordAnswerAndStep}
+                question={currentQuestion}
+                history={this.state.history}
+              />
+            }
+            {
+              this.state.step === this.state.count &&
+              <Summary givenAnswers={this.state.givenAnswers}/>
+            }
           </div>
-        }
-        <div className="WizardApp__body">
-          {
-            this.state.step === 0 &&
-            <Intro onStart={this.startWizard}/>
-          }
-          {
-            0 < this.state.step && this.state.step < this.state.count &&
-            <Question
-              onNext={this.recordAnswerAndStep}
-              question={currentQuestion}
-              history={this.state.history}
-            />
-          }
-          {
-            this.state.step === this.state.count &&
-            <Summary givenAnswers={this.state.givenAnswers}/>
-          }
+          <StatusBar step={this.state.step} count={this.state.count}/>
         </div>
-        <StatusBar step={this.state.step} count={this.state.count}/>
-      </div>
+      </FadeTransition>
     );
   }
 }

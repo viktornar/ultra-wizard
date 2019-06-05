@@ -13,8 +13,8 @@ function renderAnswer(answer, question, history) {
     question.answers
   ) {
     const {depends: {step, condition}, answers} = question;
-
-    if (history.givenAnswers[step - 1] < condition.min) {
+    // Not a nice place.
+    if (parseInt(history.givenAnswers[step - 1]) < condition.min) {
       return answers.indexOf(answer) < condition.renderIndex;
     } else {
       return answers.indexOf(answer) > condition.renderIndex;
@@ -27,8 +27,8 @@ function renderAnswer(answer, question, history) {
 function Question(props) {
   const {question, history} = props;
   const {text, answers, answer} = question;
-  const handleClick = (answer) => () => {
-    props.onNext(answer)
+  const handleClick = (userAnswer) => () => {
+    props.onNext(userAnswer)
   };
 
   const currentHistory = [...history].pop();
@@ -37,11 +37,12 @@ function Question(props) {
     <div className="Question">
       <h2>{text}</h2>
       {
-        answer && answer.min && answer.max &&
+        answer && answer.min && answer.max && answer.prefix &&
         <NumberInput
           onNext={props.onNext}
           min={answer.min}
           max={answer.max}
+          prefix={answer.prefix}
         />
       }
       {
