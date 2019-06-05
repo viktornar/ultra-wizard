@@ -1,4 +1,5 @@
 import React from 'react';
+import './FadeTransition.scss';
 
 const FadeTransition = (props) => {
   const extendedChildren = React.Children.map(props.children, (child) => {
@@ -7,7 +8,7 @@ const FadeTransition = (props) => {
     return className ? React.cloneElement(
       child,
       {
-        className: `${className} fade-in`,
+        className: `${className} FadeTransition`,
       }
     ) : child;
   });

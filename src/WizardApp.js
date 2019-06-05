@@ -9,6 +9,7 @@ import Intro from "./wizzard/Intro";
 import {historyGoBack, historyRecord} from "./core/history";
 import Question from "./wizzard/Question";
 import Summary from "./wizzard/Summary";
+import FadeTransition from "./wizzard/FadeTransition";
 
 class WizardApp extends React.Component {
   static propTypes = {

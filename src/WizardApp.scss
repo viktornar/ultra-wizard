@@ -7,7 +7,7 @@
   background-color: transparent;
   position: relative;
   overflow: hidden;
-  height: 500px;
+  min-height: 500px;
 
   &__button--back {
     position: absolute;
@@ -57,19 +57,6 @@
 
   &__body {
     text-align: center;
-  }
-
-  .transition {
-    transition: opacity 900ms ease-in-out;
-    opacity: 0;
-
-    &.entered {
-      opacity: 1;
-    }
-
-    &.exiting {
-      opacity: 0;
-    }
   }
 
   h2 {

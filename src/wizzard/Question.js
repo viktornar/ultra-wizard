@@ -12,9 +12,9 @@ function renderAnswer(answer, question, history) {
     question.depends.condition &&
     question.answers
   ) {
-    const { depends: { step,  condition }, answers } = question;
+    const {depends: {step, condition}, answers} = question;
 
-    if (history.givenAnswers[step-1] < condition.min) {
+    if (history.givenAnswers[step - 1] < condition.min) {
       return answers.indexOf(answer) < condition.renderIndex;
     } else {
       return answers.indexOf(answer) > condition.renderIndex;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FadeTransition from '../core/FadeTransition';
+import FadeTransition from './FadeTransition';
 
 import './Intro.scss';
 
@@ -9,7 +9,7 @@ function Intro(props) {
   const { onStart } = props;
 
   return (
-    <FadeTransition {...props}>
+    <FadeTransition>
       <div className="Intro">
         <h2>We will help for you to take a right loan</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
