@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ultra-wizard/static/css/main.5144918f.chunk.css",
+    "main.js": "/ultra-wizard/static/js/main.fce21965.chunk.js",
+    "main.js.map": "/ultra-wizard/static/js/main.fce21965.chunk.js.map",
+    "runtime~main.js": "/ultra-wizard/static/js/runtime~main.5059387f.js",
+    "runtime~main.js.map": "/ultra-wizard/static/js/runtime~main.5059387f.js.map",
+    "static/js/2.dfc9ae99.chunk.js": "/ultra-wizard/static/js/2.dfc9ae99.chunk.js",
+    "static/js/2.dfc9ae99.chunk.js.map": "/ultra-wizard/static/js/2.dfc9ae99.chunk.js.map",
+    "index.html": "/ultra-wizard/index.html",
+    "precache-manifest.587a3564e5fc9b46767994c5dc95c507.js": "/ultra-wizard/precache-manifest.587a3564e5fc9b46767994c5dc95c507.js",
+    "service-worker.js": "/ultra-wizard/service-worker.js",
+    "static/css/main.5144918f.chunk.css.map": "/ultra-wizard/static/css/main.5144918f.chunk.css.map",
+    "static/media/StatusBar.scss": "/ultra-wizard/static/media/money-bag--red.d351e608.svg"
+  }
+}
