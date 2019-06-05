@@ -22,6 +22,10 @@ Launches the test runner in the interactive watch mode.<br>
 
 Builds the app for production to the `build` folder.<br>
 
+### `yarn deploy`
+
+Builds and deploy to github page.<br>
+
 ### How to run with serve
 The build folder is ready to be deployed.
 You may serve it with a static server:
