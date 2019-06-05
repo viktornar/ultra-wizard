@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ultra-wizard/build/static/css/main.97175bd5.chunk.css",
+    "main.js": "/ultra-wizard/build/static/js/main.fce21965.chunk.js",
+    "main.js.map": "/ultra-wizard/build/static/js/main.fce21965.chunk.js.map",
+    "runtime~main.js": "/ultra-wizard/build/static/js/runtime~main.af62bac7.js",
+    "runtime~main.js.map": "/ultra-wizard/build/static/js/runtime~main.af62bac7.js.map",
+    "static/js/2.dfc9ae99.chunk.js": "/ultra-wizard/build/static/js/2.dfc9ae99.chunk.js",
+    "static/js/2.dfc9ae99.chunk.js.map": "/ultra-wizard/build/static/js/2.dfc9ae99.chunk.js.map",
+    "index.html": "/ultra-wizard/build/index.html",
+    "precache-manifest.110e6971f039c2974e687324bfb882f2.js": "/ultra-wizard/build/precache-manifest.110e6971f039c2974e687324bfb882f2.js",
+    "service-worker.js": "/ultra-wizard/build/service-worker.js",
+    "static/css/main.97175bd5.chunk.css.map": "/ultra-wizard/build/static/css/main.97175bd5.chunk.css.map",
+    "static/media/StatusBar.scss": "/ultra-wizard/build/static/media/money-bag--red.d351e608.svg"
+  }
+}
