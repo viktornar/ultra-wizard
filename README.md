@@ -2,6 +2,8 @@
 
 ## Ultra wizard
 
+You can see working demo on [https://viktornar.github.io/ultra-wizard/](https://viktornar.github.io/ultra-wizard/)
+
 Install dependencies by using yarn
 
 ### `yarn install`
