@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Question.scss';
-import {NumberInput} from "./NumberInput";
+import NumberInput from "./NumberInput";
 import {isEmpty} from "../core/utils";
 
 function renderAnswer(answer, question, history) {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './NumberInput.scss';
 
-export class NumberInput extends Component {
+export default class NumberInput extends Component {
   static propTypes = {
     onNext: PropTypes.func.isRequired,
     min: PropTypes.number.isRequired,
@@ -41,15 +41,15 @@ export class NumberInput extends Component {
 
   render() {
     const {min, max} = this.props;
-    const buttonClass = this.state.showMessage ? 'LoanAmount__next--disabled' : 'LoanAmount__next';
+    const buttonClass = this.state.showMessage ? 'NumberInput__next--disabled' : 'NumberInput__next';
 
     return (
-      <div className="LoanAmount">
+      <div className="NumberInput">
         <input name="amount" type="number" value={this.state.amount} onChange={this.handleChange}/>
         <button className={buttonClass} onClick={this.onClick}>Next</button>
         {
           this.state.showMessage &&
-          <div className="LoanAmount__message">
+          <div className="NumberInput__message">
             {`Enter between ${min} and ${max}`}
           </div>
         }
