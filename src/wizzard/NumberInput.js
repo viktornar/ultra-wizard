@@ -17,7 +17,7 @@ export class NumberInput extends Component {
 
   handleChange = (event) => {
     this.setState({
-      amount: parseInt(event.target.value),
+      amount: parseInt(event.target.value) || '',
       showMessage: false
     });
   };

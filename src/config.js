@@ -4,7 +4,7 @@ export const wizardConfig = {
       "text": "What the size of loan you want to get?",
       "step": 1,
       "answer": {
-        "min": 10000,
+        "min": 1000,
         "max": 30000,
       },
     },
@@ -12,9 +12,10 @@ export const wizardConfig = {
       "text": "Choose the term of loan?",
       "step": 2,
       "depends": {
-        "on": 1,
+        "step": 1,
         "condition": {
-          "min": 20000
+          "min": 15000,
+          "renderIndex": 5,
         }
       },
       "answers": [
@@ -23,6 +24,9 @@ export const wizardConfig = {
         "3 years",
         "4 years",
         "5 years",
+        "10 years",
+        "25 years",
+        "30 years",
       ],
     },
     {

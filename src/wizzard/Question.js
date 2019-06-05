@@ -3,16 +3,35 @@ import PropTypes from 'prop-types';
 
 import './Question.scss';
 import {NumberInput} from "./NumberInput";
+import {isEmpty} from "../core/utils";
 
-function getAnswer(answer) {
-  if ()
+function renderAnswer(answer, question, history) {
+  if (
+    !isEmpty(question.depends) &&
+    question.depends.step &&
+    question.depends.condition &&
+    question.answers
+  ) {
+    const { depends: { step,  condition }, answers } = question;
+
+    if (history.givenAnswers[step-1] < condition.min) {
+      return answers.indexOf(answer) < condition.renderIndex;
+    } else {
+      return answers.indexOf(answer) > condition.renderIndex;
+    }
+  }
+
+  return true;
 }
 
 function Question(props) {
-  const {text, answers, answer} = props.question;
+  const {question, history} = props;
+  const {text, answers, answer} = question;
   const handleClick = (answer) => () => {
     props.onNext(answer)
   };
+
+  const currentHistory = [...history].pop();
 
   return (
     <div className="Question">
@@ -27,18 +46,20 @@ function Question(props) {
       }
       {
         answers && answers.map((answer, id) => {
-          const answerWithCondition = getAnswer();
+          if (renderAnswer(answer, question, currentHistory)) {
+            return (
+              <div key={id}>
+                <button
+                  className="Question__answer"
+                  onClick={handleClick(answer)}
+                >
+                  {answer}
+                </button>
+              </div>
+            )
+          }
 
-          return (
-            <div key={id}>
-              <button
-                className="Question__answer"
-                onClick={handleClick(answer)}
-              >
-                {answer}
-              </button>
-            </div>
-          )
+          return null;
         })
       }
     </div>
