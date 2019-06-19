@@ -109,7 +109,7 @@ class WizardApp extends React.Component {
               <Question
                 onNext={this.recordAnswerAndStep}
                 question={currentQuestionConfig}
-                history={givenAnswers}
+                givenAnswers={givenAnswers}
               />
             }
             {

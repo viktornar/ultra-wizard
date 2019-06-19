@@ -5,7 +5,7 @@ import './Question.scss';
 import NumberInput from "./NumberInput";
 import {isEmpty} from "../core/utils";
 
-function renderAnswer(answer, question, history) {
+function renderAnswer(answer, question, givenAnswers) {
   if (
     !isEmpty(question.depends) &&
     question.depends.step &&
@@ -14,7 +14,7 @@ function renderAnswer(answer, question, history) {
   ) {
     const {depends: {step, condition}, answers} = question;
     // Not a nice place.
-    if (parseInt(history[step - 1], 10) < condition.min) {
+    if (parseInt(givenAnswers[step - 1], 10) < condition.min) {
       return answers.indexOf(answer) < condition.renderIndex;
     } else {
       return answers.indexOf(answer) > condition.renderIndex;
@@ -25,7 +25,7 @@ function renderAnswer(answer, question, history) {
 }
 
 function Question(props) {
-  const {question, history} = props;
+  const {question, givenAnswers} = props;
   const {text, answers, answer} = question;
   const handleClick = (userAnswer) => () => {
     props.onNext(userAnswer)
@@ -45,7 +45,7 @@ function Question(props) {
       }
       {
         answers && answers.map((answer, id) => {
-          if (renderAnswer(answer, question, history)) {
+          if (renderAnswer(answer, question, givenAnswers)) {
             return (
               <div key={id}>
                 <button
@@ -68,7 +68,7 @@ function Question(props) {
 Question.propTypes = {
   onNext: PropTypes.func.isRequired,
   question: PropTypes.object.isRequired,
-  history: PropTypes.array.isRequired,
+  givenAnswers: PropTypes.array.isRequired,
 };
 
 export default Question;
