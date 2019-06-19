@@ -12,7 +12,7 @@ import { historyGoBack, historyRecord } from './core/history';
 import Question from './wizzard/Question';
 import Summary from './wizzard/Summary';
 import FadeTransition from './wizzard/FadeTransition';
-import {historyBack} from "./redux/actions";
+import { historyBack as historyBackAction, historyRecord as historyRecordAction } from './redux/actions';
 
 class WizardApp extends React.Component {
   static propTypes = {
@@ -115,8 +115,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
-    historyRecord,
-    historyBack
+    historyRecordAction,
+    historyBackAction
   }, dispatch)
 });
 
