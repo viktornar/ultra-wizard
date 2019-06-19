@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import {connect} from 'react-redux';
 
 import StatusBar from './wizzard/StatusBar';
 import {STATE_INITIAL, STATE_STARTED} from './core/constants';
@@ -107,4 +107,8 @@ class WizardApp extends React.Component {
   }
 }
 
-export default WizardApp;
+const mapStateToProps = state => ({
+  wizard: state.wizard
+});
+
+export default connect(mapStateToProps)(WizardApp);
