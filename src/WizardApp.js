@@ -114,7 +114,7 @@ class WizardApp extends React.Component {
             }
             {
               !showIntro && givenAnswers.length === questions.length &&
-              <Summary givenAnswers={this.state.givenAnswers}/>
+              <Summary givenAnswers={givenAnswers}/>
             }
           </div>
           <StatusBar step={this.state.step} count={this.state.count}/>
