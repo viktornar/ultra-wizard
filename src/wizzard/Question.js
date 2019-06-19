@@ -9,13 +9,12 @@ import {isEmpty} from "../core/utils";
 function renderAnswer(answer, question, givenAnswers) {
   if (
     !isEmpty(question.depends) &&
-    question.depends.id &&
     question.depends.condition &&
     question.answers
   ) {
     const {depends: {id, condition}, answers} = question;
     // Not a nice place.
-    if (parseInt(givenAnswers[id - 1], 10) < condition.min) {
+    if (parseInt(givenAnswers[id], 10) < condition.min) {
       return answers.indexOf(answer) < condition.renderIndex;
     } else {
       return answers.indexOf(answer) > condition.renderIndex;

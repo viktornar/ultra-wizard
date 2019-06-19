@@ -1,7 +1,7 @@
 export const wizardConfig = {
   questions: [
     {
-      "id": 1,
+      "id": 0,
       "text": "What the size of loan you want to get?",
       "tip": "Depending on entered value next step will differ :)",
       "answer": {
@@ -11,10 +11,10 @@ export const wizardConfig = {
       },
     },
     {
-      "id": 2,
+      "id": 1,
       "text": "Choose the term of loan?",
       "depends": {
-        "id": 1,
+        "id": 0,
         "condition": {
           "min": 15000,
           "renderIndex": 5,
@@ -32,7 +32,7 @@ export const wizardConfig = {
       ],
     },
     {
-      "id": 3,
+      "id": 2,
       "text": "Payment frequency per year?",
       "answers": [
         'Every month',
@@ -41,7 +41,7 @@ export const wizardConfig = {
       ],
     },
     {
-      "id": 4,
+      "id": 3,
       "text": "Interest rate?",
       "answer": {
         "min": 1,
