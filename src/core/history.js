@@ -8,7 +8,6 @@ export const historyGoBack = (instance) => {
   let history = [...instance.state.history];
   history.pop();
   history = history.length ? history : STATE_STARTED;
-  const formerHistoryElement = history[history.length - 1];
-  const {...historyElementWithoutScore} = formerHistoryElement;
-  instance.setState({...{history}, ...historyElementWithoutScore})
+  const lastHistoryElement = history[history.length - 1];
+  instance.setState({...{history}, ...lastHistoryElement})
 };
