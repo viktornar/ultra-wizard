@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a2a47eddf353f37b1fac0151f1f1ec96",
+    "revision": "566f4fdea03acfe0bc08556f97772443",
     "url": "/ultra-wizard/index.html"
   },
   {
-    "revision": "cf03a69d445242ca2703",
-    "url": "/ultra-wizard/static/css/main.2a6db21f.chunk.css"
+    "revision": "1d4b61ffee3614cbf035",
+    "url": "/ultra-wizard/static/css/main.06767d3d.chunk.css"
   },
   {
-    "revision": "2da3b42876082feab3fc",
-    "url": "/ultra-wizard/static/js/2.dfc9ae99.chunk.js"
+    "revision": "cdd555197b089bafeaca",
+    "url": "/ultra-wizard/static/js/2.483e587c.chunk.js"
   },
   {
-    "revision": "cf03a69d445242ca2703",
-    "url": "/ultra-wizard/static/js/main.5df20f9f.chunk.js"
+    "revision": "1d4b61ffee3614cbf035",
+    "url": "/ultra-wizard/static/js/main.42c45e1d.chunk.js"
   },
   {
     "revision": "0629bed6aea89895d882",
