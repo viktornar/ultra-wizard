@@ -1,2 +1,3 @@
-export const HISTORY_BACK = "HISTORY_BACK";
-export const HISTORY_RECORD = "HISTORY_RECORD";
+export const HISTORY_BACK = 'HISTORY_BACK';
+export const HISTORY_RECORD = 'HISTORY_RECORD';
+export const START_WIZARD = 'START_WIZARD';

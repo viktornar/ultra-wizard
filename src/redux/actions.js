@@ -1,11 +1,16 @@
-import {HISTORY_BACK, HISTORY_RECORD} from './actionTypes';
+import { HISTORY_BACK, HISTORY_RECORD, START_WIZARD } from './actionTypes';
+import { STATE_STARTED } from '../core/constants';
 
-export const historyBack = content => ({
-  type: HISTORY_BACK,
-  payload: {}
+export const startWizard = () => ({
+  type: START_WIZARD,
+  payload: STATE_STARTED
 });
 
-export const historyRecord = id => ({
+export const historyBack = () => ({
+  type: HISTORY_BACK
+});
+
+export const historyRecord = content => ({
   type: HISTORY_RECORD,
-  payload: {}
+  payload: content
 });

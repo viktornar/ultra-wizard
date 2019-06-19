@@ -12,7 +12,11 @@ import { historyGoBack, historyRecord } from './core/history';
 import Question from './wizzard/Question';
 import Summary from './wizzard/Summary';
 import FadeTransition from './wizzard/FadeTransition';
-import { historyBack as historyBackAction, historyRecord as historyRecordAction } from './redux/actions';
+import {
+  startWizard as startWizardAction,
+  historyBack as historyBackAction,
+  historyRecord as historyRecordAction
+} from './redux/actions';
 
 class WizardApp extends React.Component {
   static propTypes = {
@@ -40,13 +44,23 @@ class WizardApp extends React.Component {
     this.setState(() => {
       return {step: 1};
     });
+
+    const { actions } = this.props;
+    actions.startWizardAction();
+
     historyRecord(this, STATE_STARTED);
   };
 
-  goBack = () => historyGoBack(this);
+  goBack = () => {
+    const { actions } = this.props;
+    actions.historyBackAction();
+    historyGoBack(this);
+  };
 
   recordAnswerAndStep = (answer) => {
-    const {givenAnswers} = this.state;
+    const { actions } = this.props;
+
+    const { givenAnswers } = this.state;
     givenAnswers.push(answer);
 
     let step = 0;
@@ -57,6 +71,11 @@ class WizardApp extends React.Component {
     } else {
       step = nextStep;
     }
+
+    actions.historyRecordAction({
+      step,
+      givenAnswers
+    });
 
     historyRecord(this, {
       step,
@@ -115,6 +134,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
+    startWizardAction,
     historyRecordAction,
     historyBackAction
   }, dispatch)

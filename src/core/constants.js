@@ -6,5 +6,6 @@ export const STATE_INITIAL = {
 
 export const STATE_STARTED = {
   givenAnswers: [],
-  step: 1
+  step: 1,
+  history: []
 };
