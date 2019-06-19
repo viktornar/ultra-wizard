@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import StatusBar from './wizzard/StatusBar';
-import { STATE_INITIAL, STATE_STARTED } from './core/constants';
-
 import './WizardApp.scss';
+import StatusBar from './wizzard/StatusBar';
 import Intro from './wizzard/Intro';
-import { historyGoBack, historyRecord } from './core/history';
 import Question from './wizzard/Question';
 import Summary from './wizzard/Summary';
 import FadeTransition from './wizzard/FadeTransition';
