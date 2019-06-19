@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import './WizardApp.scss';
-import StatusBar from './wizzard/StatusBar';
-import Intro from './wizzard/Intro';
-import Question from './wizzard/Question';
-import Summary from './wizzard/Summary';
-import FadeTransition from './wizzard/FadeTransition';
+import StatusBar from './wizard/StatusBar';
+import Intro from './wizard/Intro';
+import Question from './wizard/Question';
+import Summary from './wizard/Summary';
+import FadeTransition from './wizard/FadeTransition';
 import {
   startWizard,
   prevStep,
