@@ -14,7 +14,7 @@ function renderAnswer(answer, question, history) {
   ) {
     const {depends: {step, condition}, answers} = question;
     // Not a nice place.
-    if (parseInt(history.givenAnswers[step - 1]) < condition.min) {
+    if (parseInt(history[step - 1], 10) < condition.min) {
       return answers.indexOf(answer) < condition.renderIndex;
     } else {
       return answers.indexOf(answer) > condition.renderIndex;
@@ -31,8 +31,6 @@ function Question(props) {
     props.onNext(userAnswer)
   };
 
-  const currentHistory = [...history].pop();
-
   return (
     <div className="Question">
       <h2>{text}</h2>
@@ -47,7 +45,7 @@ function Question(props) {
       }
       {
         answers && answers.map((answer, id) => {
-          if (renderAnswer(answer, question, currentHistory)) {
+          if (renderAnswer(answer, question, history)) {
             return (
               <div key={id}>
                 <button

@@ -109,7 +109,7 @@ class WizardApp extends React.Component {
               <Question
                 onNext={this.recordAnswerAndStep}
                 question={currentQuestionConfig}
-                history={this.state.history}
+                history={givenAnswers}
               />
             }
             {
@@ -117,7 +117,7 @@ class WizardApp extends React.Component {
               <Summary givenAnswers={givenAnswers}/>
             }
           </div>
-          <StatusBar step={this.state.step} count={this.state.count}/>
+          <StatusBar step={givenAnswers.length} count={questions.length}/>
         </div>
       </FadeTransition>
     );
