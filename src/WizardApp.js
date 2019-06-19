@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 import StatusBar from './wizzard/StatusBar';
-import {STATE_INITIAL, STATE_STARTED} from "./core/constants";
+import {STATE_INITIAL, STATE_STARTED} from './core/constants';
 
 import './WizardApp.scss';
-import Intro from "./wizzard/Intro";
-import {historyGoBack, historyRecord} from "./core/history";
-import Question from "./wizzard/Question";
-import Summary from "./wizzard/Summary";
-import FadeTransition from "./wizzard/FadeTransition";
+import Intro from './wizzard/Intro';
+import {historyGoBack, historyRecord} from './core/history';
+import Question from './wizzard/Question';
+import Summary from './wizzard/Summary';
+import FadeTransition from './wizzard/FadeTransition';
 
 class WizardApp extends React.Component {
   static propTypes = {
