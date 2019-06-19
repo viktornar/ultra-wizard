@@ -73,7 +73,6 @@ class WizardApp extends React.Component {
     }
 
     actions.historyRecordAction({
-      step,
       givenAnswers
     });
 
@@ -81,22 +80,19 @@ class WizardApp extends React.Component {
       step,
       givenAnswers
     });
-
-    this.setState({
-      step,
-      givenAnswers
-    });
   };
 
   render() {
+    const { wizard: { givenAnswers, showIntro } } = this.props;
+
     const {questions} = this.props.wizardConfig;
-    const currentQuestion = questions[this.state.step - 1];
+    const currentQuestionConfig = questions[givenAnswers.length];
 
     return (
       <FadeTransition>
         <div className="WizardApp">
           {
-            this.state.step > 1 && this.state.step < this.state.count &&
+            givenAnswers.length > 0 && givenAnswers.length < questions.length &&
             <div
               className="WizardApp__button--back"
               onClick={this.goBack}>
@@ -105,19 +101,19 @@ class WizardApp extends React.Component {
           }
           <div className="WizardApp__body">
             {
-              this.state.step === 0 &&
+              showIntro &&
               <Intro onStart={this.startWizard}/>
             }
             {
-              0 < this.state.step && this.state.step < this.state.count &&
+              !showIntro && givenAnswers.length < questions.length &&
               <Question
                 onNext={this.recordAnswerAndStep}
-                question={currentQuestion}
+                question={currentQuestionConfig}
                 history={this.state.history}
               />
             }
             {
-              this.state.step === this.state.count &&
+              !showIntro && givenAnswers.length === questions.length &&
               <Summary givenAnswers={this.state.givenAnswers}/>
             }
           </div>

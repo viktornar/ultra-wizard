@@ -6,15 +6,16 @@ import {
 } from '../actionTypes';
 
 const initialState = {
+  showIntro: true,
   givenAnswers: [],
 };
 
 function wizard(state = initialState, action) {
   switch (action.type) {
     case START_WIZARD:
-      return { ...action.payload };
+      return { ...initialState, showIntro: false };
     case HISTORY_RECORD:
-     return { ...action.payload };
+     return { ...action.payload  };
     case HISTORY_BACK:
       let { givenAnswers } = state;
       givenAnswers.pop();
