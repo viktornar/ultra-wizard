@@ -15,7 +15,8 @@ function wizard(state = initialState, action) {
     case START_WIZARD:
       return { ...initialState, showIntro: false };
     case HISTORY_RECORD:
-     return { ...action.payload  };
+      const { answer } = action.payload;
+      return { ...state, givenAnswers: [...state.givenAnswers, answer] };
     case HISTORY_BACK:
       let { givenAnswers } = state;
       givenAnswers.pop();

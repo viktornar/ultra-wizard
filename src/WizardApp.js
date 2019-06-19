@@ -23,62 +23,21 @@ class WizardApp extends React.Component {
     wizardConfig: PropTypes.any,
   };
 
-  constructor(props) {
-    super(props);
-    const {wizardConfig} = props;
-    if (wizardConfig) {
-      const {questions} = wizardConfig;
-
-      this.state = {
-        ...STATE_INITIAL,
-        ...{
-          steps: questions[questions.length - 1].step + 1,
-          count: questions.length + 1,
-          wizardConfig,
-        }
-      };
-    }
-  }
-
   startWizard = () => {
-    this.setState(() => {
-      return {step: 1};
-    });
-
     const { actions } = this.props;
     actions.startWizardAction();
-
-    historyRecord(this, STATE_STARTED);
   };
 
   goBack = () => {
     const { actions } = this.props;
     actions.historyBackAction();
-    historyGoBack(this);
   };
 
   recordAnswerAndStep = (answer) => {
     const { actions } = this.props;
 
-    const { givenAnswers } = this.state;
-    givenAnswers.push(answer);
-
-    let step = 0;
-    let nextStep = this.state.step + 1;
-
-    if (nextStep >= this.state.count) {
-      step = this.state.count;
-    } else {
-      step = nextStep;
-    }
-
     actions.historyRecordAction({
-      givenAnswers
-    });
-
-    historyRecord(this, {
-      step,
-      givenAnswers
+      answer
     });
   };
 

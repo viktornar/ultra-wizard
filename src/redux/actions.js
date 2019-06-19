@@ -10,7 +10,7 @@ export const historyBack = () => ({
   type: HISTORY_BACK
 });
 
-export const historyRecord = content => ({
+export const historyRecord = answer => ({
   type: HISTORY_RECORD,
-  payload: content
+  payload: answer
 });
