@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ultra-wizard/static/css/main.06767d3d.chunk.css",
-    "main.js": "/ultra-wizard/static/js/main.42c45e1d.chunk.js",
-    "main.js.map": "/ultra-wizard/static/js/main.42c45e1d.chunk.js.map",
+    "main.js": "/ultra-wizard/static/js/main.08bfdc70.chunk.js",
+    "main.js.map": "/ultra-wizard/static/js/main.08bfdc70.chunk.js.map",
     "runtime~main.js": "/ultra-wizard/static/js/runtime~main.5059387f.js",
     "runtime~main.js.map": "/ultra-wizard/static/js/runtime~main.5059387f.js.map",
     "static/js/2.483e587c.chunk.js": "/ultra-wizard/static/js/2.483e587c.chunk.js",
     "static/js/2.483e587c.chunk.js.map": "/ultra-wizard/static/js/2.483e587c.chunk.js.map",
     "index.html": "/ultra-wizard/index.html",
-    "precache-manifest.63520bf115c3130829c25ec60c9ea2a3.js": "/ultra-wizard/precache-manifest.63520bf115c3130829c25ec60c9ea2a3.js",
+    "precache-manifest.907625d7d823bb68dcd20cdff4a9b30f.js": "/ultra-wizard/precache-manifest.907625d7d823bb68dcd20cdff4a9b30f.js",
     "service-worker.js": "/ultra-wizard/service-worker.js",
     "static/css/main.06767d3d.chunk.css.map": "/ultra-wizard/static/css/main.06767d3d.chunk.css.map",
     "static/media/StatusBar.scss": "/ultra-wizard/static/media/money-bag--red.d351e608.svg"

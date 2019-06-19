@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "566f4fdea03acfe0bc08556f97772443",
+    "revision": "6656b7a7879152a2a09267f2b889d0e9",
     "url": "/ultra-wizard/index.html"
   },
   {
-    "revision": "1d4b61ffee3614cbf035",
+    "revision": "a4286a175582c88c49f0",
     "url": "/ultra-wizard/static/css/main.06767d3d.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ultra-wizard/static/js/2.483e587c.chunk.js"
   },
   {
-    "revision": "1d4b61ffee3614cbf035",
-    "url": "/ultra-wizard/static/js/main.42c45e1d.chunk.js"
+    "revision": "a4286a175582c88c49f0",
+    "url": "/ultra-wizard/static/js/main.08bfdc70.chunk.js"
   },
   {
     "revision": "0629bed6aea89895d882",
