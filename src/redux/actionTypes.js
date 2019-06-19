@@ -1,3 +1,3 @@
-export const HISTORY_BACK = 'HISTORY_BACK';
-export const HISTORY_RECORD = 'HISTORY_RECORD';
+export const STEP_BACK = 'STEP_BACK';
+export const STEP_NEXT = 'STEP_NEXT';
 export const START_WIZARD = 'START_WIZARD';

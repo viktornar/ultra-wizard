@@ -11,8 +11,8 @@ import Summary from './wizzard/Summary';
 import FadeTransition from './wizzard/FadeTransition';
 import {
   startWizard as startWizardAction,
-  historyBack as historyBackAction,
-  historyRecord as historyRecordAction
+  prevStep as prevStepAction,
+  nextStep as nextStepAction
 } from './redux/actions';
 
 class WizardApp extends React.Component {
@@ -27,13 +27,13 @@ class WizardApp extends React.Component {
 
   goBack = () => {
     const { actions } = this.props;
-    actions.historyBackAction();
+    actions.prevStepAction();
   };
 
   recordAnswerAndStep = (answer) => {
     const { actions } = this.props;
 
-    actions.historyRecordAction({
+    actions.nextStepAction({
       answer
     });
   };
@@ -87,8 +87,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
     startWizardAction,
-    historyRecordAction,
-    historyBackAction
+    nextStepAction,
+    prevStepAction
   }, dispatch)
 });
 

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import {
-  HISTORY_RECORD,
-  HISTORY_BACK,
+  STEP_NEXT,
+  STEP_BACK,
   START_WIZARD
 } from '../actionTypes';
 
@@ -14,10 +14,10 @@ function wizard(state = initialState, action) {
   switch (action.type) {
     case START_WIZARD:
       return { ...initialState, showIntro: false };
-    case HISTORY_RECORD:
+    case STEP_NEXT:
       const { answer } = action.payload;
       return { ...state, givenAnswers: [...state.givenAnswers, answer] };
-    case HISTORY_BACK:
+    case STEP_BACK:
       let { givenAnswers } = state;
       givenAnswers.pop();
       return { ...state, givenAnswers };
