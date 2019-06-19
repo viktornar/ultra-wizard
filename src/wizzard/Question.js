@@ -5,16 +5,17 @@ import './Question.scss';
 import NumberInput from "./NumberInput";
 import {isEmpty} from "../core/utils";
 
+// Render current answer depending if some condition exist in questions config.
 function renderAnswer(answer, question, givenAnswers) {
   if (
     !isEmpty(question.depends) &&
-    question.depends.step &&
+    question.depends.id &&
     question.depends.condition &&
     question.answers
   ) {
-    const {depends: {step, condition}, answers} = question;
+    const {depends: {id, condition}, answers} = question;
     // Not a nice place.
-    if (parseInt(givenAnswers[step - 1], 10) < condition.min) {
+    if (parseInt(givenAnswers[id - 1], 10) < condition.min) {
       return answers.indexOf(answer) < condition.renderIndex;
     } else {
       return answers.indexOf(answer) > condition.renderIndex;
