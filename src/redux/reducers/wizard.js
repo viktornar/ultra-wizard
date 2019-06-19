@@ -4,7 +4,7 @@ import {
   START_WIZARD
 } from '../actionTypes';
 
-const initialState = {
+export const initialState = {
   showIntro: true,
   givenAnswers: [],
 };
